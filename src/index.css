@@ -13,7 +13,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    width: 80%;
+    width: 90%;
     background-color: white;
 }
 
@@ -21,14 +21,13 @@ body {
     margin-right: 20px;
 }
 .post__title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 .post__body {
-
-    font-size: 1rem;
-    word-break: break-all;
+    font-size: 1.2rem;
+    word-break:keep-all
 }
 .post__btn {
     word-break: normal;
