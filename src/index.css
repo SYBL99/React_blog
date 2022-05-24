@@ -54,3 +54,18 @@ body {
     background-color: rgba(232, 227, 227, 0.977);
     border: 1px solid;
 }
+.post__filter {
+    margin: 15px auto;
+    border: 3px solid orange;
+
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 90%;
+    background-color: white;
+}
+.post__filter input {
+    font-size: 1.2rem;
+}
