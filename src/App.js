@@ -10,11 +10,12 @@ import { usePosts } from "./hooks/usePost";
 import { getPageCount, getPagesArray } from "./utils/pages";
 
 function App() {
+
   const [modal, setModal] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
   const [limit, setLimit] = useState(10);
-  const [page, setPage] =  useState(1);
-  const [filter, setFilter] = useState({sort: '', query: ''})
+  const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState({ sort: '', query: '' })
   const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
     const posts = await PosrService.getAll(limit, page);
     setPosts(posts.data)
@@ -23,14 +24,14 @@ function App() {
   })
   const [posts, setPosts] = useState([])
   const pagesArray = getPagesArray(totalPages)
-  useEffect(()=>{
-      fetchPosts()
-  }, [])
+  useEffect(() => {
+    fetchPosts()
+  }, [page])
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
-  function createPost(title, body){
+  function createPost(title, body) {
     setPosts([...posts, { id: posts.length, title, body }])
     setModal(false)
     setTitle('')
@@ -43,18 +44,18 @@ function App() {
   return (
     <div className="App">
       <button onClick={() => setModal(true)}>Добавить пост</button>
-      <PostFilter filter={filter} setFilter={setFilter}/>
+      <PostFilter filter={filter} setFilter={setFilter} />
       <MyModal visible={modal} setVisible={setModal} children={
         <PostForm create={createPost} title={title} setTitle={setTitle} content={content} setContent={setContent} />} />
       {postError && <h2>Произошла ошибка</h2>}
       {isPostsLoading
-      ? <Loader/>
-      : <PostList posts={sortedAndSearchedPosts} title={'Список постов'} deletePost={deletePost} />
+        ? <Loader />
+        : <PostList posts={sortedAndSearchedPosts} title={'Список постов'} deletePost={deletePost} />
       }
       <div className="btn__wrapper">
-        {pagesArray.map(p => 
-        <button className={page === p ? 'btn__current' : "nav__btn"}
-        onClick={()=>setPage(p)} key={p}>{p}</button>)}
+        {pagesArray.map(p =>
+          <button className={page === p ? 'btn__current' : "nav__btn"}
+            onClick={() => setPage(p)} key={p}>{p}</button>)}
       </div>
     </div>
   );
