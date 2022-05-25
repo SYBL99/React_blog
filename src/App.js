@@ -5,6 +5,7 @@ import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
 import Loader from "./components/UI/loader/Loader";
 import MyModal from "./components/UI/modal/MyModal";
+import Pagination from "./components/UI/pagination/Pagination";
 import { useFetching } from "./hooks/useFetching";
 import { usePosts } from "./hooks/usePost";
 import { getPageCount, getPagesArray } from "./utils/pages";
@@ -23,7 +24,7 @@ function App() {
     setTotalPages(getPageCount(totalCount, limit));
   })
   const [posts, setPosts] = useState([])
-  const pagesArray = getPagesArray(totalPages)
+
   useEffect(() => {
     fetchPosts()
   }, [page])
@@ -52,11 +53,7 @@ function App() {
         ? <Loader />
         : <PostList posts={sortedAndSearchedPosts} title={'Список постов'} deletePost={deletePost} />
       }
-      <div className="btn__wrapper">
-        {pagesArray.map(p =>
-          <button className={page === p ? 'btn__current' : "nav__btn"}
-            onClick={() => setPage(p)} key={p}>{p}</button>)}
-      </div>
+      <Pagination page={page} changePage={setPage} totalPages={totalPages}/>
     </div>
   );
 }
