@@ -4,6 +4,7 @@ body {
     background-color: rgb(235, 237, 237);
 }
 .App {
+    
 }
 .post {
     margin: 15px auto;
@@ -67,5 +68,19 @@ body {
     background-color: white;
 }
 .post__filter input {
+    font-size: 1.2rem;
+}
+.btn__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav__btn {
+    font-size: 1.2rem;
+    padding: 20px;
+}
+.btn__current {
+    padding: 20px;
+    color: orange;
     font-size: 1.2rem;
 }
