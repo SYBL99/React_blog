@@ -2,7 +2,8 @@ import React from "react";
 import PostItem from "./PostItem";
 
 const PostList = (props) => {
-    if (!props.posts.length){
+    console.log(props.loading)
+    if (props.posts.length === 0){
         return (
                 <h2 style={{ fontWeight: 600, fontSize: '3rem', textAlign: "center" }} >Посты не найдены!</h2> 
         )

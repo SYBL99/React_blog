@@ -3,8 +3,37 @@
 body {
     background-color: rgb(235, 237, 237);
 }
-.App {
-    
+#root {
+    font-family: Comic Sans MS;
+    min-height: 100%;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.909);
+    height: 150px;
+}
+header nav {
+    padding: 0 30px;
+    min-height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav a {
+    color: white;
+    font: 2rem Comic Sans MS;
+}
+footer {
+    height: 50px;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    min-height: calc(100vh - 150px - 50px);
 }
 .post {
     margin: 15px auto;
