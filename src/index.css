@@ -8,13 +8,16 @@ body {
     min-height: 100%;
 }
 header {
-    background-color: rgba(0, 0, 0, 0.909);
+    background-color: #00BAF0;
+    background: linear-gradient(to left, #f46b45, #eea849);
     height: 150px;
+    
 }
+
 header nav {
     padding: 0 30px;
     min-height: 100%;
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -24,9 +27,13 @@ header nav a {
     color: white;
     font: 2rem Comic Sans MS;
 }
+header nav a:not(:last-child){
+    margin-right: 20px;
+}
 footer {
     height: 50px;
     background-color: black;
+    font-size: 2rem;
     color: aliceblue;
     display: flex;
     align-items: center;
@@ -34,6 +41,16 @@ footer {
 }
 main {
     min-height: calc(100vh - 150px - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+main button{
+    font-size: 2rem;
+}
+.active {
+    color: rgb(47, 255, 206);
 }
 .post {
     margin: 15px auto;
@@ -59,10 +76,28 @@ main {
     font-size: 1.2rem;
     word-break:keep-all
 }
+.btn__box {
+    display: flex;
+}
+.post__comment {
+    margin: 20px auto;
+    width: 80%;
+    border: 2px blue solid;
+    background-color: white;
+    padding: 15px
+}
+.post__comment h2{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
 .post__btn {
     word-break: normal;
     font-size: 1.2rem;
     padding: 5px
+}
+.post__btn:first-child{
+    margin-right: 10px;
 }
 .post__form {
     font-size: 1.2rem;
@@ -112,4 +147,23 @@ main {
     padding: 20px;
     color: orange;
     font-size: 1.2rem;
+}
+@media screen and (max-width: 800px) {
+    html{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 630px) {
+    header nav {
+    }
+    .post {
+        flex-direction: column;
+    }
+    .post__text{
+        margin-bottom:15px ;
+    }
+    .btn__box {
+        justify-content: space-between;
+        width: 100%;
+    }
 }

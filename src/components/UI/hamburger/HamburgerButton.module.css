@@ -1,0 +1,35 @@
+nav {
+    height: 50px;
+    width: 150px;
+    background-color: aqua;
+    z-index: 2;
+}
+main {
+    padding: 50px;
+}
+
+p {
+    margin: 20px;
+}
+.burger-btn {
+    width: 30px;
+    height: 2px;
+    margin-left: 20px;
+    position: relative;
+    background-color: black;
+}
+.burger-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 2px;
+
+}
+.burger-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 2px;
+}
