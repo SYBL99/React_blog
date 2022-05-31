@@ -6,6 +6,7 @@ import PostList from "../components/PostList";
 import Loader from "../components/UI/loader/Loader";
 import MyModal from "../components/UI/modal/MyModal";
 import Pagination from "../components/UI/pagination/Pagination";
+import PaginationMobile from "../components/UI/pagination/PaginationMobile";
 import { useFetching } from "../hooks/useFetching";
 import { usePosts } from "../hooks/usePost";
 import { getPageCount, getPagesArray } from "../utils/pages";
@@ -57,6 +58,7 @@ function Posts() {
                 : <PostList posts={sortedAndSearchedPosts} title={'Список постов'} deletePost={deletePost} />
             }
             <Pagination page={page} changePage={setPage} totalPages={totalPages} />
+            <PaginationMobile page={page} changePage={setPage} totalPages={totalPages} />
         </>
     );
 }

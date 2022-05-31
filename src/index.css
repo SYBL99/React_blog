@@ -8,7 +8,6 @@ body {
     min-height: 100%;
 }
 header {
-    background-color: #00BAF0;
     background: linear-gradient(to left, #f46b45, #eea849);
     height: 150px;
     
@@ -27,9 +26,7 @@ header nav a {
     color: white;
     font: 2rem Comic Sans MS;
 }
-header nav a:not(:last-child){
-    margin-right: 20px;
-}
+
 footer {
     height: 50px;
     background-color: black;
@@ -104,7 +101,7 @@ main button{
 }
 .post__form input{
     display: block;
-    width: 40vw;
+    width: 100%;
     padding: 5px;
     margin-bottom: 15px;
     font-size: 1.2rem;
@@ -122,7 +119,6 @@ main button{
 .post__filter {
     margin: 15px auto;
     border: 3px solid orange;
-
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
@@ -133,28 +129,46 @@ main button{
 }
 .post__filter input {
     font-size: 1.2rem;
+    width: 50%;
 }
 .btn__wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: none;
 }
 .nav__btn {
-    font-size: 1.2rem;
-    padding: 20px;
+    font-size: 1.4rem;
+    padding: 10px;
+    background-color: rgb(235, 237, 237);
 }
 .btn__current {
     padding: 20px;
     color: orange;
     font-size: 1.2rem;
+    background-color: rgb(235, 237, 237);
+}
+.pagination__mobile {
+    display: none;
 }
 @media screen and (max-width: 800px) {
     html{
         font-size: 10px;
     }
+    header {
+            height: 100px;
+        }
 }
 @media screen and (max-width: 630px) {
-    header nav {
+    header {
+        height: 50px;
+    }
+    .menu {
+        margin: 0;
+        padding: 0;
+    }
+    .menu__nav{
+        display: none;
     }
     .post {
         flex-direction: column;
@@ -165,5 +179,14 @@ main button{
     .btn__box {
         justify-content: space-between;
         width: 100%;
+    }
+    main {
+        min-height: calc(100vh - 100px);
+        }
+    .pagination {
+        display: none;
+    }
+    .pagination__mobile {
+        display: block;
     }
 }
