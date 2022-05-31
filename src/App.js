@@ -18,6 +18,7 @@ function App() {
           <Route path='posts' element={<Posts/>} />
           <Route path='posts/:id' element={<OpenPost />} />
           <Route path='infinite' element={<Infinite/>} />
+          <Route path='infinite/:id' element={<OpenPost />} />
           <Route path='test' element={<Test/>} />
           <Route path="*" element={<div>Страница не найдена!</div>}/>
         </Route>

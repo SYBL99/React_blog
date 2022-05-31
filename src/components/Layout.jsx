@@ -15,7 +15,7 @@ const Layout = () => {
                     <NavLink className={"menu__nav"} to="/about">О нас</NavLink>
                 </nav>
             </header>
-            <main>
+            <main className="main__content">
                 <Outlet/>
             </main>
             <footer>2022</footer>

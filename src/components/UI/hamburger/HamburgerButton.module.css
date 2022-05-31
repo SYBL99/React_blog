@@ -22,7 +22,7 @@
 }
 .brMain.active {
     width: 50vw;
-    height: 100%;
+    height: 100vh;
     text-align: left;
     position: absolute;
     display: flex;

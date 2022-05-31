@@ -2,6 +2,7 @@
 
 body {
     background-color: rgb(235, 237, 237);
+    position: relative;
 }
 #root {
     font-family: Comic Sans MS;
@@ -10,7 +11,9 @@ body {
 header {
     background: linear-gradient(to left, #f46b45, #eea849);
     height: 150px;
-    
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 }
 
 header nav {
@@ -42,6 +45,14 @@ main {
     flex-direction: column;
     align-items: center;
     font-size: 2rem;
+}
+.main__content {
+    min-height: calc(100vh - 150px - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    padding-top: 150px;
 }
 main button{
     font-size: 2rem;
@@ -155,6 +166,10 @@ main button{
     html{
         font-size: 10px;
     }
+    .main__content {
+    min-height: calc(100vh - 50px);
+    padding-top: 100px;
+    }
     header {
             height: 100px;
         }
@@ -169,6 +184,10 @@ main button{
     }
     .menu__nav{
         display: none;
+    }
+    .main__content {
+        min-height: calc(100vh - 50px);
+        padding-top: 50px;
     }
     .post {
         flex-direction: column;
