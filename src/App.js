@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
 import {Route, Routes} from "react-router-dom";
-import About from "./pages/About";
 import Posts from "./pages/Posts";
 import OpenPost from "./components/OpenPost";
 import Layout from "./components/Layout";
@@ -14,8 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>} />
-          <Route path={'about'} element={<About/>} />
-          <Route path='posts' element={<Posts/>} />
+          <Route path={'posts'} element={<Posts/>} />
           <Route path='posts/:id' element={<OpenPost />} />
           <Route path='infinite' element={<Infinite/>} />
           <Route path='infinite/:id' element={<OpenPost />} />

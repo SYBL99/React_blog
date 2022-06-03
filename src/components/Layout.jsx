@@ -3,7 +3,7 @@ import HamburgerButton from "./UI/hamburger/HamburgerButton";
 
 const Layout = () => {
     const navigation = [{ name: 'Главная', path: "/" }, { name: 'Посты', path: "/posts" },
-        { name: 'Бесконечная лента', path: "/infinite" }, { name: 'О нас', path: "/about" }]
+        { name: 'Бесконечная лента', path: "/infinite" }]
     return (
         <>
             <header>
@@ -12,7 +12,6 @@ const Layout = () => {
                     <NavLink className={"menu__nav"} to="/">Главная</NavLink>
                     <NavLink className={"menu__nav"} to="/posts">Посты</NavLink>
                     <NavLink className={"menu__nav"} to="/infinite">Бесконечная лента</NavLink>
-                    <NavLink className={"menu__nav"} to="/about">О нас</NavLink>
                 </nav>
             </header>
             <main className="main__content">

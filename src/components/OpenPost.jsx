@@ -18,7 +18,7 @@ const OpenPost = (props) => {
 
     return (
         <>
-        <h2 style={{fontSize: '4rem'}}>Комментарии к посту</h2>
+        <h2 style={{fontSize: '4rem', textAlign: 'center'}}>Комментарии к посту</h2>
         {isPostLoading
             ? <Loader/>
             : comments.map(comment => (<PostComment name={comment.name} body={comment.body} key={comment.id} />))
