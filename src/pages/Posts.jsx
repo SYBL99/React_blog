@@ -34,7 +34,7 @@ const Posts = () => {
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
     function createPost(title, body) {
-        setPosts([...posts, { id: posts.length, title, body}])
+        setPosts([{ id: posts.length, title, body }, ...posts])
         setModal(false);
         setTitle('');
         setContent('');

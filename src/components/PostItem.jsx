@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const PostItem = ({number, post, deletePost}) => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     return (
         <div className="post">
             <div className="post__text">
@@ -20,7 +20,6 @@ const PostItem = ({number, post, deletePost}) => {
                 <button className="post__btn" onClick={() => navigate(`${number}`)}>Открыть</button>
                 <button className="post__btn" onClick={() => deletePost(post)}>Удалить</button>
             </div>
-
         </div>
     );
 };

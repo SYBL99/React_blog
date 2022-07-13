@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>} />
-          <Route path={'posts'} element={<Posts/>} />
+          <Route path='posts' element={<Posts/>} />
           <Route path='posts/:id' element={<OpenPost />} />
           <Route path='infinite' element={<Infinite/>} />
           <Route path='infinite/:id' element={<OpenPost />} />
