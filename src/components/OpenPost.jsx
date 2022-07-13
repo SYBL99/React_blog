@@ -5,27 +5,26 @@ import { useFetching } from "../hooks/useFetching";
 import PostComment from "./PostComment";
 import Loader from "./UI/loader/Loader";
 
-const OpenPost = (props) => {
+const OpenPost = () => {
     const [comments, setComments] = useState([])
     const {id} = useParams();
     const [fetchPost, isPostLoading, postError] = useFetching(async () => {
     const response = await PostService.getById(id);
-    setComments(response.data)
-})
+    setComments(response.data);
+    })
     useEffect(() => {
         fetchPost()
     }, [])
-
     return (
         <>
-        <h2 style={{fontSize: '4rem', textAlign: 'center'}}>Комментарии к посту</h2>
-        {isPostLoading
-            ? <Loader/>
-            : comments.map(comment => (<PostComment name={comment.name} body={comment.body} key={comment.id} />))
-        }
-            
+        <h2 className="subtitle">Комментарии к посту</h2>
+            {postError && <h2>Произошла ошибка</h2>}
+            {isPostLoading
+                ? <Loader/>
+                : comments.map(comment => (<PostComment name={comment.name} body={comment.body} key={comment.id} />))
+            }
+
         </>
-        
     );
 };
 export default OpenPost;

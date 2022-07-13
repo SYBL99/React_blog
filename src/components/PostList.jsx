@@ -1,17 +1,17 @@
 import React from "react";
 import PostItem from "./PostItem";
 
-const PostList = (props) => {
-    if (!props.posts.length){
+const PostList = ({ posts, title, deletePost}) => {
+    if (!posts.length){
         return (
-                <h2 style={{ fontWeight: 600, fontSize: '3rem', textAlign: "center" }} >Посты не найдены!</h2> 
+            <h2 className="title">Посты не найдены!</h2> 
         )
     }
     return (
         <>
-            <h2 style={{fontWeight: 600, fontSize: '3rem', textAlign: "center"}}>
-                {props.title}</h2>
-            {props.posts.map((post, index) => <PostItem number={index+1} post={post} key={index} deletePost={props.deletePost}/>)}
+            <h2 className="subtitle">
+                {title}</h2>
+            {posts.map((post, index) => <PostItem number={index+1} post={post} key={index} deletePost={deletePost}/>)}
         </>
     );
 };

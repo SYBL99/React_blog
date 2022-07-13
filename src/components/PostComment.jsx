@@ -7,7 +7,6 @@ const PostComment = ({name, body}) => {
                 <h2>{name}</h2>
                 <p>{body}</p>
             </div>
-
         </>
 
     );

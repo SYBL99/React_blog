@@ -1,5 +1,6 @@
 import React from "react";
 import MySelect from "./UI/select/MySelect";
+
 const PostFilter = ({filter, setFilter}) => {
     return (
         <div className="post__filter">

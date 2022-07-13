@@ -1,6 +1,5 @@
 {
   "name": "react_blog",
-  "homepage": "https://sybl99.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,8 +15,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-deploy -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -9,46 +9,43 @@ import Pagination from "../components/UI/pagination/Pagination";
 import PaginationMobile from "../components/UI/pagination/PaginationMobile";
 import { useFetching } from "../hooks/useFetching";
 import { usePosts } from "../hooks/usePost";
-import { getPageCount, getPagesArray } from "../utils/pages";
+import { getPageCount} from "../utils/pages";
 
-function Posts() {
+const Posts = () => {
 
     const [modal, setModal] = useState(false);
     const [totalPages, setTotalPages] = useState(0);
-    const [limit, setLimit] = useState(10);
+    const [limit] = useState(10);
     const [page, setPage] = useState(1);
-    const [filter, setFilter] = useState({ sort: '', query: '' })
+    const [filter, setFilter] = useState({ sort: '', query: '' });
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const posts = await PostService.getAll(limit, page);
-        setPosts(posts.data)
-        const totalCount = posts.headers['x-total-count']
+        setPosts(posts.data);
+        const totalCount = posts.headers['x-total-count'];
         setTotalPages(getPageCount(totalCount, limit));
     })
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         fetchPosts()
-    }, [page])
-    const [title, setTitle] = useState('')
-    const [content, setContent] = useState('')
-    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+    }, [page]);
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
     function createPost(title, body) {
-        console.log(posts)
-        setPosts([...posts, { id: posts.length, title, body
-}])
-        console.log(posts)
-        setModal(false)
-        setTitle('')
-        setContent('')
+        setPosts([...posts, { id: posts.length, title, body}])
+        setModal(false);
+        setTitle('');
+        setContent('');
     }
     function deletePost(post) {
-        setPosts(posts.filter(item => item.id !== post.id))
+        setPosts(posts.filter(item => item.id !== post.id));
     }
 
     return (
         <>
-            <button onClick={() => setModal(true)}>Добавить пост</button>
+            <button onClick={() => setModal(true)}>Добавить пост!</button>
             <PostFilter filter={filter} setFilter={setFilter} />
             <MyModal visible={modal} setVisible={setModal} children={
                 <PostForm create={createPost} title={title} setTitle={setTitle} content={content} setContent={setContent} />} />
@@ -61,6 +58,6 @@ function Posts() {
             <PaginationMobile page={page} changePage={setPage} totalPages={totalPages} />
         </>
     );
-}
+};
 
 export default Posts;

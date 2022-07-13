@@ -11,9 +11,9 @@ const HamburgerButton = ({children}) =>
                     <span/>
                 </div>
             </div>
-            <main className={menuActive ? `${cl.brMain}`+ ' ' + `${cl.active}` : `${cl.brMain}`}>
+            <nav className={menuActive ? `${cl.brMain}`+ ' ' + `${cl.active}` : `${cl.brMain}`}>
                 {children.map(child => <NavLink className={cl.child} key={child.path} to={child.path} onClick={() => setMenuActive(!menuActive)}>{child.name} </NavLink>)}
-            </main>
+            </nav>
         </div>
     )
 }

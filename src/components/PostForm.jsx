@@ -1,11 +1,12 @@
 import React from "react";
-const PostForm = (props) => {
+
+const PostForm = ({create, title, setTitle, content, setContent}) => {
     return (
         <div className="post__form">
             <form action="">
-                <input value={props.title} onChange={e => props.setTitle(e.target.value)} placeholder="Заголовок" type="text" />
-                <input value={props.content} onChange={e => props.setContent(e.target.value)} placeholder="Текст поста" type="text" />
-                <button onClick={e => {props.create(props.title, props.content) ; e.preventDefault()}}>Опубликовать</button>
+                <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Заголовок" type="text" />
+                <input value={content} onChange={e => setContent(e.target.value)} placeholder="Текст поста" type="text" />
+                <button onClick={e => {create(title, content) ; e.preventDefault()}}>Опубликовать</button>
             </form>
         </div>
     );

@@ -167,8 +167,21 @@ main button{
 .btn__current {
     padding: 20px;
     color: orange;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     background-color: rgb(235, 237, 237);
+}
+.subtitle {
+    font-size: 4rem;
+    text-align: center;
+}
+.title {
+    font-size: 4rem; 
+    text-align: center;
+    min-height: calc(100vh - 390px);
+}
+.observer__element {
+    height: 1px; 
+    width: 80%;
 }
 .pagination__mobile {
     display: none;
@@ -181,6 +194,9 @@ main button{
     min-height: calc(100vh - 50px);
     padding-top: 100px;
     }
+    .title {
+        min-height: calc(100vh - 320px);
+    }
     header {
             height: 100px;
         }
@@ -188,6 +204,9 @@ main button{
 @media screen and (max-width: 630px) {
     header {
         height: 50px;
+    }
+    .title {
+        min-height: calc(100vh - 270px);
     }
     .menu {
         margin: 0;
