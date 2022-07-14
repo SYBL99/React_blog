@@ -177,8 +177,14 @@ main button{
 .title {
     font-size: 4rem; 
     text-align: center;
-    min-height: calc(100vh - 390px);
+    min-height: calc(100vh - 400px);
 }
+
+.posts__wrapper {
+    min-height: calc(100vh - 400px);
+    width: 100%;
+}
+
 .observer__element {
     height: 1px; 
     width: 80%;

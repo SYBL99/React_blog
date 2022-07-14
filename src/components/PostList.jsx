@@ -8,11 +8,11 @@ const PostList = ({ posts, title, deletePost}) => {
         )
     }
     return (
-        <>
+        <div className="posts__wrapper">
             <h2 className="subtitle">
                 {title}</h2>
             {posts.map((post, index) => <PostItem number={index+1} post={post} key={index} deletePost={deletePost}/>)}
-        </>
+        </div>
     );
 };
 export default PostList;
